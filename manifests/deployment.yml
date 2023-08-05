@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: procomertipipelinespba 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: procomertipipelinespba
+  template:
+    metadata:
+      labels:
+        app: procomertipipelinespba 
+    spec:
+      containers:
+        - name: procomertipipelinespba 
+          image: kubernettes.azurecr.io/procomertipipelinespba
+          ports:
+          - containerPort: 8080
